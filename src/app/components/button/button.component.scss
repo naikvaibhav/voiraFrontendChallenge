@@ -1,0 +1,43 @@
+$buttonPrimaryColor: #4b9dfc;
+$buttonPrimaryColorHover: #388ee9;
+$buttonLightColor: transparent;
+$buttonLightColorHover: #fefefee0;
+$buttonPrimaryFontColor: #ffff;
+$buttonLightFontColor: #5fb4fc;
+$btnBorderRadius: 4px;
+$btnFontSize: 1rem;
+$fontWeightForBold: 600;
+
+.primary{
+    background-color: $buttonPrimaryColor;
+    color: $buttonPrimaryFontColor;
+    font-size: $btnFontSize;
+    font-weight: $fontWeightForBold;
+    padding: 0.75rem 1rem;
+    border-radius: $btnBorderRadius;
+    box-shadow: none;
+    outline: none;
+    border: none;
+
+    &:hover{
+        background-color: $buttonPrimaryColorHover;
+        cursor: pointer;
+    }
+}
+
+.secondary{
+    background-color: $buttonLightColor;
+    color: $buttonLightFontColor;
+    font-size: $btnFontSize;
+    font-weight: $fontWeightForBold;
+    padding: 0.75rem 1rem;
+    border-radius: $btnBorderRadius;
+    box-shadow: none;
+    outline: none;
+    border: none;
+
+    &:hover{
+        background-color: $buttonLightColorHover;
+        cursor: pointer;
+    }
+}

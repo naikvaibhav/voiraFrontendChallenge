@@ -1,0 +1,28 @@
+$fontSize: 1rem;
+$minHeight: 100vh;
+$backgroundColor: #dddd;
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: $fontSize;
+    min-height: $minHeight;
+    background-color: $backgroundColor;
+
+    .storedImage{
+        padding: 2% 2%;
+        margin: 2% 0;
+        // border: 1.5px solid #000;
+        width: 50vw;
+        height: 50vh;
+        border-radius: 0.2rem;
+
+        img{
+            height: inherit;
+            width: inherit;
+            padding: 2% 2%;
+        }
+    }
+}

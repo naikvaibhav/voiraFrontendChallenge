@@ -1,0 +1,151 @@
+$modalBackground: #ffffff;
+$modalBorderRadius: .5rem;
+$modalFontColor: #6b6f86;
+$primaryTextColor: #54a4fb;
+$borderColor: #f0f0f6;
+$fontWeightForBold: 600;
+
+/* The Modal (background) */
+.modal {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+    /* Modal Content */
+  .modal-content {
+    background-color: $modalBackground;
+    margin: auto;
+    // padding: 0px 20px;
+    // border: 1px solid #888;
+    width: 50%;
+    border-radius: $modalBorderRadius;
+    border: 1px solid rgba(0,0,0,.2);
+    color: $modalFontColor;
+
+    .modal-header{
+        border-bottom: 1.5px solid $borderColor;
+        padding: 1rem;
+
+        .modal-title {
+            margin-bottom: 0;
+            // line-height: 1.5;
+            font-size: 1rem;
+            font-weight: $fontWeightForBold;
+
+            .subTitle{
+                color: $primaryTextColor;
+                // font-weight: $fontWeightForBold;
+                font-size: 0.8rem;
+                padding: 0 20px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .modal-body{
+        height: 50vh;
+        padding: 2rem;
+        background-color: #fafaff;
+
+        .selectImage{
+            border: 1px dashed #000;
+            border-radius: $modalBorderRadius;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .imageCropSection{
+            height: 100%;
+            padding: 8%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            image-cropper{
+                height: inherit;
+            }
+        }
+    }
+
+    .modal-footer{
+        border-top: 1.5px solid $borderColor;
+        padding: 1rem;
+        display: flex;
+        justify-content: space-between;
+
+        .previewImage{
+            height: 70px;
+            width: 70px;
+            border: 2px solid $borderColor;
+            padding: 1px;
+            border-radius: 50%;
+        }
+
+        .image{
+            display: flex;
+            justify-content: flex-start;
+            line-height: 4rem;
+            color: $modalFontColor;
+            font-weight: $fontWeightForBold;
+            gap: 1.2rem;
+        }
+
+        //flex group for button
+        .btn-grp{
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        //allow space between each item inside the flex
+        .btn-grp > app-button {
+            margin: 6px;
+        }
+    }
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    // color: #000;
+    float: right;
+    font-size: 2.0rem;
+    // font-weight: bold;
+    line-height: 2rem;
+    opacity: .8;
+
+    &:hover, &:focus{
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+  }
+}
+
+.modal_hide{
+      display: none;
+}
+  
+  
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    // border: 1px solid #ccc;
+    color: $primaryTextColor;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}

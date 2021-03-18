@@ -1,0 +1,53 @@
+<!-- <div class='modal'>
+    <div class="modal-header">
+        <span class="modal-title">Change Organization Image</span>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+    </div>
+</div> -->
+
+
+<div id="myModal" [ngClass]="modalStatus">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+    <div class="modal-header">
+    <span class="close" (click)="closeModal('modal_hide')">&times;</span>
+    <p class="modal-title">{{modalTitle}}<span (click)="reUpload()" class="subTitle">Re-upload Image</span></p>
+    </div>
+      <div class="modal-body">
+        <div *ngIf="!isImageSelected" class="selectImage">
+          <div>
+          <label for="file-upload" class="custom-file-upload">
+           Upload file
+        </label>
+        <input id="file-upload" type="file" (change)="fileChangeEvent($event)"/>
+      </div>
+        </div>
+
+        <div *ngIf="isImageSelected" class="imageCropSection">
+          <div>
+            <image-cropper
+            [containWithinAspectRatio]="containWithinAspectRatio"
+            [imageChangedEvent]="imageChangedEvent"
+            [maintainAspectRatio]="true"
+            [aspectRatio]="16 / 9"
+            (imageCropped)="imageCropped($event)"
+            (cropperReady)="cropperReady($event)"
+            (loadImageFailed)="loadImageFailed()"
+            ></image-cropper>
+        </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span *ngIf="isImageSelected; else elseBlock" class="image"><img [src]="croppedImage"  class="previewImage"/>Preview</span>
+        <ng-template #elseBlock><img/></ng-template>
+        <div class="btn-grp">
+        <app-button [name] = "cancelBtn" [class]='secondary' [action]="'modal_hide'" (btnClick)="closeModal($event)"></app-button>
+        <app-button [name] = "btnName" [class]='primary' (btnClick)="saveImage()"></app-button>
+        </div>
+      </div>
+    </div>
+  
+  </div>
